@@ -1,153 +1,413 @@
-@font-face {
-  font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?y4sg8t');
-  src:  url('fonts/icomoon.eot?y4sg8t#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?y4sg8t') format('truetype'),
-    url('fonts/icomoon.woff?y4sg8t') format('woff'),
-    url('fonts/icomoon.svg?y4sg8t#icomoon') format('svg');
-  font-weight: normal;
-  font-style: normal;
-  font-display: block;
+/* Documentation For Radium HTML5 Agency Template */
+
+
+/***
+
+====================================================================
+	Fonts
+====================================================================
+
+***/
+
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700);
+
+@import url('font-awesome.css');
+
+/***
+
+====================================================================
+	Reset
+====================================================================
+
+***/
+* {
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    outline: none;
 }
 
-[class^="icon-"], [class*=" icon-"] {
-  /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'icomoon' !important;
-  speak: never;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
+/***
 
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+====================================================================
+	Global Settings
+====================================================================
+
+ ***/
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    color: #353535;
+    line-height: 1.6em;
+    font-weight: 500;
+    background: #ffffff;
+    -webkit-font-smoothing: antialiased;
 }
 
-.icon-art-studies:before {
-  content: "\e928";
+a {
+    text-decoration: none;
+    cursor: pointer;
+    color: #FFAA23;
 }
-.icon-discipline:before {
-  content: "\e929";
+
+a:hover,
+a:focus,
+a:visited {
+    text-decoration: none;
+    outline: none;
 }
-.icon-close:before {
-  content: "\e91b";
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin: 0px;
+    background: none;
 }
-.icon-curve-arrow:before {
-  content: "\e927";
+
+h1 {
+    font-size: 24px;
 }
-.icon-plus:before {
-  content: "\e911";
+
+h2 {
+    font-size: 20px;
 }
-.icon-minus:before {
-  content: "\e917";
+
+h3 {
+    font-size: 18px;
 }
-.icon-clock:before {
-  content: "\e923";
+
+p {
+    font-size: 14px;
+    line-height: 1.6em;
 }
-.icon-online-learning:before {
-  content: "\e900";
+
+
+
+/***
+
+====================================================================
+	Sidebar
+====================================================================
+
+****/
+
+#sidebar {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 290px;
+    height: 100%;
+    padding: 0px 20px;
+    /*border-right:2px solid #ffa800;*/
+    z-index: 10;
 }
-.icon-graduated:before {
-  content: "\e903";
+
+#sidebar .mCSB_inside>.mCSB_container {
+    margin-right: 12px !important;
 }
-.icon-envelope:before {
-  content: "\e901";
+
+#sidebar .mCS_no_scrollbar .mCSB_container {
+    margin-right: 0px !important;
 }
-.icon-search:before {
-  content: "\e905";
+
+#sidebar .menu-box {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    padding: 0px 0px 30px;
+    background: #202020;
+    transition: all 1000ms ease;
+    -moz-transition: all 1000ms ease;
+    -webkit-transition: all 1000ms ease;
+    -ms-transition: all 1000ms ease;
+    -o-transition: all 1000ms ease;
+
+    border-top: 4px solid #FFAA23;
 }
-.icon-location:before {
-  content: "\e906";
+
+#sidebar .menu-box .logo {
+    position: relative;
+    text-align: center;
+    margin-bottom: 35px;
+    padding: 30px 20px 10px;
 }
-.icon-call:before {
-  content: "\e907";
+
+#sidebar .menu-box .logo img {
+    position: relative;
+    display: inline-block;
+    max-width: 100%;
 }
-.icon-charity:before {
-  content: "\e908";
+
+#sidebar .menu-box .sticky-menu {
+    position: relative;
 }
-.icon-chat:before {
-  content: "\e909";
+
+#sidebar .menu-box .sticky-menu>ul {
+    position: relative;
+    display: block;
+    margin: 0px;
+    padding: 0px;
+    border-top: 1px solid rgba(255, 255, 255, 0.20);
 }
-.icon-crawling-baby-silhouette:before {
-  content: "\e90a";
+
+#sidebar .menu-box .sticky-menu>ul>li {
+    position: relative;
+    display: block;
+    /*padding:3px 0px;*/
+    border-bottom: 1px solid rgba(255, 255, 255, 0.20);
+    font-size: 20px;
+    color: #ffffff;
+    /*text-align:right;*/
 }
-.icon-eco-house:before {
-  content: "\e90b";
+
+#sidebar .menu-box .sticky-menu>ul>li>a {
+    position: relative;
+    display: block;
+    padding: 15px 0px 15px 30px;
+    color: #ffffff;
+    font-size: 15px;
+    font-family: 'Poppins';
+    font-weight: 400;
+    line-height: 20px;
+    /*text-transform:uppercase;*/
+    transition: all 300ms ease;
+    -moz-transition: all 300ms ease;
+    -webkit-transition: all 300ms ease;
+    -ms-transition: all 300ms ease;
+    -o-transition: all 300ms ease;
 }
-.icon-email:before {
-  content: "\e90c";
+
+#sidebar .menu-box .sticky-menu>ul>li a .fa {
+    position: absolute;
+    right: -10px;
+    top: 0px;
+    width: 24px;
+    text-align: right;
+    color: #ffffff;
+    opacity: 0;
+    font-size: 12px;
+    display: block;
+    line-height: 34px;
+    transition: all 500ms ease;
+    -moz-transition: all 500ms ease;
+    -webkit-transition: all 500ms ease;
+    -ms-transition: all 500ms ease;
+    -o-transition: all 500ms ease;
+
+    display: none;
 }
-.icon-email1:before {
-  content: "\e90d";
+
+#sidebar .menu-box .sticky-menu>ul>li.current a .fa,
+#sidebar .menu-box .sticky-menu>ul>li:hover a .fa {
+    right: 6px;
+    opacity: 1;
 }
-.icon-location1:before {
-  content: "\e90e";
+
+#sidebar .menu-box .sticky-menu>ul>li>a:hover,
+#sidebar .menu-box .sticky-menu>ul>li.current>a,
+#sidebar .menu-box .sticky-menu>ul>li.current-menu-item>a {
+    color: #fff;
+    background: #FFAA23;
 }
-.icon-clock1:before {
-  content: "\e90f";
+
+#sidebar .copyright {
+    position: fixed;
+    left: 0px;
+    bottom: 5px;
+    width: 250px;
+    height: 30px;
+    font-size: 13px;
+    color: #ffffff;
+    line-height: 30px;
+    text-align: center;
 }
-.icon-fun:before {
-  content: "\e910";
+
+/***
+
+====================================================================
+	Content Section
+====================================================================
+
+****/
+
+
+
+#content-section {
+    position: relative;
+    padding: 0px 0px 30px 290px;
+    width: 100%;
+    z-index: 5;
 }
-.icon-happy-children:before {
-  content: "\e912";
+
+#content-section .section {
+    position: relative;
+    min-height: 200px;
+    margin-bottom: 50px;
+    padding: 0 60px;
 }
-.icon-instructor:before {
-  content: "\e913";
+
+#content-section .sec-title {
+    position: relative;
+    padding: 19px 20px 19px 30px;
+    background: #FFAA23;
+    border-radius: 5px;
+    color: #fff;
 }
-.icon-interest-rate:before {
-  content: "\e914";
+
+#content-section .sec-title h2 {
+    position: relative;
+    font-size: 24px;
+    font-family: 'Poppins';
+    text-transform: capitalize;
+    font-weight: 600;
 }
-.icon-juggler:before {
-  content: "\e915";
+
+#content-section .sec-title h3 {
+    position: relative;
+    font-size: 22px;
+    font-family: 'Poppins';
+    text-transform: uppercase;
+    font-weight: 600;
 }
-.icon-left-arrow:before {
-  content: "\e916";
+
+#content-section .sec-title .icon {
+    position: absolute;
+    left: 20px;
+    top: 10px;
+    width: 30px;
+    height: 40px;
+    line-height: 30px;
+    font-size: 18px;
+
+    display: none;
 }
-.icon-up-arrow:before {
-  content: "\e902";
+
+#content-section .separator {
+    position: relative;
+    margin: 20px 0px;
+    height: 1px;
 }
-.icon-down-arrow:before {
-  content: "\e904";
+
+#content-section .separator:before {
+    content: '';
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(left, #d0d0d0, #f1f1f1, #ffffff);
+    background: -moz-linear-gradient(left, #d0d0d0, #f1f1f1, #ffffff);
+    background: -webkit-linear-gradient(left, #d0d0d0, #f1f1f1, #ffffff);
+    background: -ms-linear-gradient(left, #d0d0d0, #f1f1f1, #ffffff);
+    background: -o-linear-gradient(left, #d0d0d0, #f1f1f1, #ffffff);
 }
-.icon-location2:before {
-  content: "\e918";
+
+#content-section .sec-content {
+    position: relative;
+    padding: 10px 0px;
 }
-.icon-location-fill:before {
-  content: "\e919";
+
+.introduction .sec-content h2 {
+    font-size: 35px;
+    /*text-transform:uppercase;*/
+    margin-bottom: 10px;
+    font-weight: 600;
+    /*font-family: 'Open Sans Condensed', sans-serif;*/
+    font-family: 'Poppins', sans-serif;
+    color: #242424;
 }
-.icon-envelope-open:before {
-  content: "\e91a";
+
+.introduction .sec-content h3 {
+    font-size: 18px;
+    /*text-transform:capitalize;*/
+    font-weight: 500;
+    color: #242424;
+    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
 }
-.icon-playtime:before {
-  content: "\e91c";
+
+.html-structure .sec-content h3,
+.css-structure .sec-content h3,
+.javascript .sec-content h3,
+.sources-credits .sec-content h3,
+.contact-form .sec-content h3,
+.support .sec-content h3,
+.map-settings .sec-content h3,
+.count-timer .sec-content h3 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    line-height: 1.4em;
 }
-.icon-presentation:before {
-  content: "\e91d";
+
+.html-structure code {
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+    color: #353535;
+    padding: 30px 20px;
+    background: #f1f1f1;
+    height: auto;
+    display: block;
 }
-.icon-rating:before {
-  content: "\e91e";
+
+.javascript ul li {
+    list-style: none;
 }
-.icon-right-arrow:before {
-  content: "\e91f";
+
+.sources-credits p {
+    margin-bottom: 2px;
 }
-.icon-safety:before {
-  content: "\e920";
+
+#content-section img {
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
 }
-.icon-telephone:before {
-  content: "\e921";
+
+#content-section .image-box {
+    position: relative;
+    padding: 0px;
+    margin: 30px 0px;
 }
-.icon-timer:before {
-  content: "\e922";
+
+
+.sec-content h3.content-title {
+    font-size: 25px;
+    font-family: 'Poppins';
+    color: #242424;
 }
-.icon-trolley-cart:before {
-  content: "\e924";
+
+.sec-content .checkbox,
+.sec-content .checkbox li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
-.icon-trophy:before {
-  content: "\e925";
+
+.sec-content .checkbox li:before {
+    content: '\f00c';
+    font-family: "FontAwesome";
+    color: green;
+    font-size: 15px;
+    margin-right: 15px;
 }
-.icon-trophy1:before {
-  content: "\e926";
+
+.sec-content .checkbox li {
+    font-size: 18px;
+    line-height: 25px;
+    color: #242424;
+}
+
+.sec-content .checkbox li+li {
+    margin-top: 7px;
 }
